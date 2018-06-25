@@ -411,8 +411,7 @@ public class FormUsuario extends javax.swing.JFrame {
         jButtonExcluir.setEnabled(true);
         jButtonCancelar.setEnabled(true);
         jButtonNovo.setEnabled(false);
-      
-           
+                
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jFormattedTextFieldBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldBuscarActionPerformed
@@ -433,6 +432,12 @@ public class FormUsuario extends javax.swing.JFrame {
        jButtonEditar.setEnabled(false);
        jButtonExcluir.setEnabled(false);
        jButtonSalvar.setEnabled(false);
+       jFormattedTextNome.setText("");
+       jFormattedTextCPF.setText("");
+       jFormattedTextEmail.setText("");
+       jFormattedTextLogin.setText("");
+       jFormattedTextSenha.setText("");
+       jTextFieldId.setText("");
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
@@ -457,6 +462,11 @@ public class FormUsuario extends javax.swing.JFrame {
         if(respostaUsuario == JOptionPane.YES_OPTION){
             mod.setIdUsuario(Integer.parseInt(jTextFieldId.getText()));
             control.ExcluirUsuario(mod);
+            mod.setNomeUsuario("");
+            mod.setEmailusuario("");
+            mod.setLoginUsuario("");
+            mod.setSenhaUsuario("");
+            mod.setCpfUsuario("");
             jFormattedTextNome.setText("");
             jFormattedTextCPF.setText("");
             jFormattedTextEmail.setText("");

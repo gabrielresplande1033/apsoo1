@@ -5,17 +5,19 @@
  */
 package View;
 
+import Controller.ConexaoBD;
+
 /**
  *
  * @author gabriel
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form TelaPrincipal
-     */
+    
+    ConexaoBD conecta = new ConexaoBD();
+    
     public TelaPrincipal() {
         initComponents();
+        conecta.conexao();
     }
 
     /**
@@ -40,6 +42,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -65,7 +69,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel3.setText("Inserir Produtos");
         jInternalFrameAtalhos.getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 50, 120, 15);
+        jLabel3.setBounds(20, 50, 120, 14);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icone6.png"))); // NOI18N
         jInternalFrameAtalhos.getContentPane().add(jButton3);
@@ -73,7 +77,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel4.setText("Inserir Usuários");
         jInternalFrameAtalhos.getContentPane().add(jLabel4);
-        jLabel4.setBounds(160, 50, 113, 15);
+        jLabel4.setBounds(160, 50, 75, 14);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adduser_añadir_3553.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +114,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu2.setText("Produto");
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setText("Sair");
+
+        jMenuItem3.setText("Sair");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu3);
+
         setJMenuBar(jMenuBar1);
 
         setSize(new java.awt.Dimension(1009, 618));
@@ -129,6 +145,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
          FormUsuario cadastro = new FormUsuario();
          cadastro.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+          conecta.desconecta();
+          System.exit(0);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,8 +197,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }

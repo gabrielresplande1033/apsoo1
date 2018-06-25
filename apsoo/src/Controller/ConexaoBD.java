@@ -16,7 +16,7 @@ public class ConexaoBD {
     public Statement stm; // realizar consulta
     public ResultSet rs; // armazenar resultado consulta
     private String driver = "org.postgresql.Driver"; // identificar servico
-    private String caminho = "jdbc:postgresql://localhost:5432/bancobrinquedo"; // setar local BD
+    private String caminho = "jdbc:postgresql://localhost:5432/bancoprojeto"; // setar local BD
     private String usuario = "postgres"; // usuario BD
     private String senha = "teste1212"; // senha BD
     public Connection con; // realizar conexao
@@ -30,6 +30,16 @@ public class ConexaoBD {
                     } catch (SQLException ex) {
                           JOptionPane.showMessageDialog(null, "Problema ao se conectar com o banco de dados:\n"+ex);
                       }
+    }
+    
+    public void executaSql(String sql){
+        try {
+            stm = con.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
+            rs = stm.executeQuery(sql);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Problema ao executar consulta SQL:\n"+ex);
+        }
+        
     }
     
     public void desconecta(){

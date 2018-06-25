@@ -15,6 +15,7 @@ public class FormUsuario extends javax.swing.JFrame {
     modelUsuario mod = new modelUsuario();
     ControleUsuario control = new ControleUsuario();
     ConexaoBD conex = new ConexaoBD();
+    int flag = 0;
     
     public FormUsuario() {
         initComponents();
@@ -49,6 +50,11 @@ public class FormUsuario extends javax.swing.JFrame {
         jButtonExcluir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel8 = new javax.swing.JLabel();
+        jFormattedTextFieldBuscar = new javax.swing.JFormattedTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jTextFieldId = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -111,6 +117,11 @@ public class FormUsuario extends javax.swing.JFrame {
 
         jButtonCancelar.setText("Cancelar");
         jButtonCancelar.setEnabled(false);
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
 
         jButtonNovo.setText("Novo");
         jButtonNovo.addActionListener(new java.awt.event.ActionListener() {
@@ -121,9 +132,19 @@ public class FormUsuario extends javax.swing.JFrame {
 
         jButtonEditar.setText("Editar");
         jButtonEditar.setEnabled(false);
+        jButtonEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarActionPerformed(evt);
+            }
+        });
 
         jButtonExcluir.setText("Excluir");
         jButtonExcluir.setEnabled(false);
+        jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExcluirActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -137,6 +158,25 @@ public class FormUsuario extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(jTable1);
+
+        jLabel8.setText("Buscar Usuário");
+
+        jFormattedTextFieldBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldBuscarActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("busca");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("ID:");
+
+        jTextFieldId.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -174,19 +214,31 @@ public class FormUsuario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBoxGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jFormattedTextFieldBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel9))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jFormattedTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFormattedTextCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jFormattedTextCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(24, 24, 24))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -222,9 +274,14 @@ public class FormUsuario extends javax.swing.JFrame {
                         .addComponent(jButtonEditar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonExcluir)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jFormattedTextFieldBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(408, Short.MAX_VALUE))
+                .addContainerGap(381, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -242,7 +299,7 @@ public class FormUsuario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(111, 111, 111)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,36 +332,150 @@ public class FormUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxGrupoActionPerformed
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
-       mod.setNomeUsuario(jFormattedTextNome.getText());
-       mod.setCpfUsuario(jFormattedTextCPF.getText());
-       mod.setEmailusuario(jFormattedTextEmail.getText());
-       mod.setLoginUsuario(jFormattedTextLogin.getText());
-       mod.setSenhaUsuario(jFormattedTextSenha.getText());
-       control.Salvar(mod);
+       
+       if(flag == 1){ //condiçao para salvar
+        
+         mod.setNomeUsuario(jFormattedTextNome.getText());
+         mod.setCpfUsuario(jFormattedTextCPF.getText());
+         mod.setEmailusuario(jFormattedTextEmail.getText());
+         mod.setLoginUsuario(jFormattedTextLogin.getText());
+         mod.setSenhaUsuario(jFormattedTextSenha.getText());
+         control.Salvar(mod);
+         jFormattedTextNome.setText("");
+         jFormattedTextCPF.setText("");
+         jFormattedTextEmail.setText("");
+         jFormattedTextLogin.setText("");
+         jFormattedTextSenha.setText("");
+         jFormattedTextNome.setEnabled(false);
+         jFormattedTextCPF.setEnabled(false);
+         jFormattedTextEmail.setEnabled(false);
+         jFormattedTextLogin.setEnabled(false);
+         jFormattedTextSenha.setEnabled(false);
+         jComboBoxGrupo.setEnabled(false);
+         jButtonSalvar.setEnabled(false);
+         jButtonCancelar.setEnabled(false);
+       
+       }
+       
+       else{
+           
+           mod.setIdUsuario(Integer.parseInt(jTextFieldId.getText()));
+           mod.setNomeUsuario(jFormattedTextNome.getText());
+           mod.setCpfUsuario(jFormattedTextCPF.getText());
+           mod.setEmailusuario(jFormattedTextEmail.getText());
+           mod.setLoginUsuario(jFormattedTextLogin.getText());
+           control.EditarUsuario(mod);
+           jFormattedTextNome.setText("");
+           jFormattedTextCPF.setText("");
+           jFormattedTextEmail.setText("");
+           jFormattedTextLogin.setText("");
+           jTextFieldId.setText("");
+           jFormattedTextNome.setEnabled(false);
+           jFormattedTextCPF.setEnabled(false);
+           jFormattedTextEmail.setEnabled(false);
+           jFormattedTextLogin.setEnabled(false);
+           jFormattedTextSenha.setEnabled(false);
+           jButtonNovo.setEnabled(true);
+           jButtonCancelar.setEnabled(false);
+                 
+       }
+         
+    }//GEN-LAST:event_jButtonSalvarActionPerformed
+
+    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
+       flag = 1;
        jFormattedTextNome.setText("");
        jFormattedTextCPF.setText("");
        jFormattedTextEmail.setText("");
        jFormattedTextLogin.setText("");
        jFormattedTextSenha.setText("");
-       jFormattedTextNome.setEnabled(false);
-        jFormattedTextCPF.setEnabled(false);
-        jFormattedTextEmail.setEnabled(false);
-        jFormattedTextLogin.setEnabled(false);
-        jFormattedTextSenha.setEnabled(false);
-        jComboBoxGrupo.setEnabled(false);
-        jButtonSalvar.setEnabled(false);
-         
-    }//GEN-LAST:event_jButtonSalvarActionPerformed
-
-    private void jButtonNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNovoActionPerformed
-        jFormattedTextNome.setEnabled(true);
-        jFormattedTextCPF.setEnabled(true);
-        jFormattedTextEmail.setEnabled(true);
-        jFormattedTextLogin.setEnabled(true);
-        jFormattedTextSenha.setEnabled(true);
-        jComboBoxGrupo.setEnabled(true);
-        jButtonSalvar.setEnabled(true);
+       jFormattedTextNome.setEnabled(true);
+       jFormattedTextCPF.setEnabled(true);
+       jFormattedTextEmail.setEnabled(true);
+       jFormattedTextLogin.setEnabled(true);
+       jFormattedTextSenha.setEnabled(true);
+       jComboBoxGrupo.setEnabled(true);
+       jButtonSalvar.setEnabled(true);
+       jButtonCancelar.setEnabled(true);
     }//GEN-LAST:event_jButtonNovoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        mod.setConsulta(jFormattedTextFieldBuscar.getText());
+        modelUsuario model = control.buscarUsuario(mod);
+        jTextFieldId.setText(String.valueOf(model.getIdUsuario()));
+        jFormattedTextNome.setText(model.getNomeUsuario());
+        jFormattedTextCPF.setText(model.getCpfUsuario());
+        jFormattedTextEmail.setText(model.getEmailusuario());
+        jFormattedTextLogin.setText(model.getLoginUsuario());
+        jButtonEditar.setEnabled(true);
+        jButtonExcluir.setEnabled(true);
+        jButtonCancelar.setEnabled(true);
+        jButtonNovo.setEnabled(false);
+      
+           
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jFormattedTextFieldBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldBuscarActionPerformed
+
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+       jFormattedTextNome.setEnabled(!true);
+       jFormattedTextCPF.setEnabled(!true);
+       jFormattedTextEmail.setEnabled(!true);
+       jFormattedTextLogin.setEnabled(!true);
+       jFormattedTextSenha.setEnabled(!true);
+       jComboBoxGrupo.setEnabled(!true);
+       jButtonSalvar.setEnabled(!true);
+       jButtonCancelar.setEnabled(!true);
+       jButtonNovo.setEnabled(true);
+       jButtonEditar.setEnabled(false);
+       jButtonEditar.setEnabled(false);
+       jButtonExcluir.setEnabled(false);
+       jButtonSalvar.setEnabled(false);
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
+
+    private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
+       
+       flag = 0;
+       jFormattedTextNome.setEnabled(true);
+       jFormattedTextCPF.setEnabled(true);
+       jFormattedTextEmail.setEnabled(true);
+       jFormattedTextLogin.setEnabled(true);
+       jFormattedTextSenha.setEnabled(true);
+       jButtonSalvar.setEnabled(true);
+       jButtonCancelar.setEnabled(true);
+       jButtonEditar.setEnabled(false);
+       jButtonNovo.setEnabled(false);
+       jButtonExcluir.setEnabled(false);
+    }//GEN-LAST:event_jButtonEditarActionPerformed
+
+    private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
+        int respostaUsuario = 0;
+        respostaUsuario = JOptionPane.showConfirmDialog(rootPane, "Deseja realmente excluir?");
+        
+        if(respostaUsuario == JOptionPane.YES_OPTION){
+            mod.setIdUsuario(Integer.parseInt(jTextFieldId.getText()));
+            control.ExcluirUsuario(mod);
+            jFormattedTextNome.setText("");
+            jFormattedTextCPF.setText("");
+            jFormattedTextEmail.setText("");
+            jFormattedTextLogin.setText("");
+            jFormattedTextSenha.setText("");
+            jTextFieldId.setText("");
+            jFormattedTextNome.setEnabled(false);
+            jFormattedTextCPF.setEnabled(false);
+            jFormattedTextEmail.setEnabled(false);
+            jFormattedTextLogin.setEnabled(false);
+            jFormattedTextSenha.setEnabled(false);
+            jComboBoxGrupo.setEnabled(false);
+            jButtonSalvar.setEnabled(false);
+            jButtonEditar.setEnabled(false);
+            jButtonExcluir.setEnabled(false);
+            jButtonCancelar.setEnabled(false);
+            jButtonNovo.setEnabled(true);
+        }
+    }//GEN-LAST:event_jButtonExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -342,6 +513,7 @@ public class FormUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonEditar;
     private javax.swing.JButton jButtonExcluir;
@@ -350,6 +522,7 @@ public class FormUsuario extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxGrupo;
     private javax.swing.JFormattedTextField jFormattedTextCPF;
     private javax.swing.JFormattedTextField jFormattedTextEmail;
+    private javax.swing.JFormattedTextField jFormattedTextFieldBuscar;
     private javax.swing.JFormattedTextField jFormattedTextLogin;
     private javax.swing.JFormattedTextField jFormattedTextNome;
     private javax.swing.JFormattedTextField jFormattedTextSenha;
@@ -360,8 +533,11 @@ public class FormUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextFieldId;
     // End of variables declaration//GEN-END:variables
 }

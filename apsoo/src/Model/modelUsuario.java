@@ -16,7 +16,8 @@ public class modelUsuario {
     private String cpfUsuario;
     private String emailusuario;
     private String loginUsuario;
-    private String senhaUsuario; 
+    private String senhaUsuario;
+    private String consulta;
     
     
     public int getIdUsuario() {
@@ -98,6 +99,20 @@ public class modelUsuario {
      */
     public void setSenhaUsuario(String senhaUsuario) {
         this.senhaUsuario = senhaUsuario;
+    }
+
+    /**
+     * @return the consulta
+     */
+    public String getConsulta() {
+        return consulta;
+    }
+
+    /**
+     * @param consulta the consulta to set
+     */
+    public void setConsulta(String consulta) {
+        this.consulta = consulta;
     }
     
 }

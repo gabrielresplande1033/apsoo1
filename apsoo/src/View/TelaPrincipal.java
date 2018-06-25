@@ -42,6 +42,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuMenu = new javax.swing.JMenu();
+        jMenuItemInicial = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
 
@@ -69,7 +71,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel3.setText("Inserir Produtos");
         jInternalFrameAtalhos.getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 50, 120, 14);
+        jLabel3.setBounds(20, 50, 120, 15);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icone6.png"))); // NOI18N
         jInternalFrameAtalhos.getContentPane().add(jButton3);
@@ -77,7 +79,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel4.setText("Inserir Usuários");
         jInternalFrameAtalhos.getContentPane().add(jLabel4);
-        jLabel4.setBounds(160, 50, 75, 14);
+        jLabel4.setBounds(160, 50, 113, 15);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adduser_añadir_3553.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -113,6 +115,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu2.setText("Produto");
         jMenuBar1.add(jMenu2);
+
+        jMenuMenu.setText("Ferramentas");
+
+        jMenuItemInicial.setText("Tela Inicial");
+        jMenuItemInicial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemInicialActionPerformed(evt);
+            }
+        });
+        jMenuMenu.add(jMenuItemInicial);
+
+        jMenuBar1.add(jMenuMenu);
 
         jMenu3.setText("Sair");
 
@@ -150,6 +164,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
           conecta.desconecta();
           System.exit(0);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItemInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemInicialActionPerformed
+          jInternalFrameAtalhos.setVisible(true);
+    }//GEN-LAST:event_jMenuItemInicialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,5 +220,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItemInicial;
+    private javax.swing.JMenu jMenuMenu;
     // End of variables declaration//GEN-END:variables
 }

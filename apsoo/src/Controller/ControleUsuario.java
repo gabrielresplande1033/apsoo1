@@ -37,4 +37,58 @@ public class ControleUsuario {  // Controle é responsavel por realizar os proce
         conex.desconecta();
     }
     
+    public void EditarUsuario(modelUsuario mod){
+        conex.conexao();
+        try {
+            PreparedStatement pst = conex.con.prepareStatement("UPDATE usuario SET nome_usuario=?, email_usuario=?, login_usuario=?, cpf_usuario=? WHERE id_serial=?");
+            pst.setString(1, mod.getNomeUsuario());
+            pst.setString(2, mod.getEmailusuario());
+            pst.setString(3, mod.getLoginUsuario());
+            pst.setString(4, mod.getCpfUsuario());
+            pst.setInt(5, mod.getIdUsuario());
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Dados alterados com sucesso");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Problema ao alterar os dados:/n"+ex);
+        }
+        
+        conex.desconecta();
+    }
+    
+    public void ExcluirUsuario(modelUsuario mod){
+        conex.conexao();
+        try {
+            PreparedStatement pst = conex.con.prepareStatement("DELETE FROM usuario WHERE id_serial=?");
+            pst.setInt(1, mod.getIdUsuario());
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Dados excluídos com sucesso");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Problema ao excluir os dados:/n"+ex);
+        }
+        
+        conex.desconecta();
+    }
+    
+    public modelUsuario buscarUsuario(modelUsuario mod){
+        conex.conexao();
+        conex.executaSql("SELECT * FROM usuario WHERE nome_usuario LIKE'%" + mod.getConsulta()+ "%'");
+        
+        try {
+            conex.rs.first();
+            mod.setIdUsuario(conex.rs.getInt("id_serial"));
+            mod.setNomeUsuario(conex.rs.getString("nome_usuario"));
+            mod.setEmailusuario(conex.rs.getString("email_usuario"));
+            mod.setLoginUsuario(conex.rs.getString("login_usuario"));
+            mod.setCpfUsuario(conex.rs.getString("cpf_usuario"));
+            mod.setSenhaUsuario(conex.rs.getString("senha_usuario"));
+            
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao buscar usuario"+ex);
+        }
+        conex.desconecta();
+        return mod;
+    }
+    
 }

@@ -27,11 +27,67 @@ WITH (
 ALTER TABLE public.usuario
   OWNER TO postgres;
 
+
+
+
+
+-- Table: public.cliente
+
+-- DROP TABLE public.cliente;
+
+CREATE TABLE public.cliente
+(
+  nome_cliente character varying NOT NULL,
+  cpf_cliente character varying NOT NULL,
+  telefone_cliente character varying,
+  idade_cliente integer,
+  email_cliente character varying NOT NULL,
+  CONSTRAINT cliente_pkey PRIMARY KEY (cpf_cliente)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.cliente
+  OWNER TO postgres;
+
+
+
+
+
+
+
+
+
+
 INSERT INTO produto(cod_barras, nome_produto, descricao_produto, fabricante_produto, valor_unitario_produto, categoria_produto)
 VALUES
 (42194,'Boneca Barbie','Boneca Barbie','Hihappy','120','Boneca'),
 (48210,'Bola de Futebol','Bola de Futebol de salão','Adidas','60','Bola'),
 (47320,'Bola de Volei','Bola para jogar Volei','Topper','30','Bola');
+
+
+
+
+-- Table: public.produto
+
+-- DROP TABLE public.produto;
+
+CREATE TABLE public.produto
+(
+  cod_barras integer NOT NULL,
+  nome_produto character varying NOT NULL,
+  descricao_produto character varying NOT NULL,
+  fabricante_produto character varying NOT NULL,
+  valor_unitario_produto integer NOT NULL,
+  categoria_produto character varying NOT NULL
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.produto
+  OWNER TO postgres;
+
+
 
 
 /******TABELA USUARIO*******/

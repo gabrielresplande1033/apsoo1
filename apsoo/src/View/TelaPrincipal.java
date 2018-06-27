@@ -73,7 +73,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel3.setText("Inserir Produtos");
         jInternalFrameAtalhos.getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 50, 120, 14);
+        jLabel3.setBounds(20, 50, 120, 15);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icone6.png"))); // NOI18N
         jInternalFrameAtalhos.getContentPane().add(jButton3);
@@ -81,7 +81,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel4.setText("Inserir Usuários");
         jInternalFrameAtalhos.getContentPane().add(jLabel4);
-        jLabel4.setBounds(160, 50, 75, 14);
+        jLabel4.setBounds(160, 50, 113, 15);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adduser_añadir_3553.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -94,16 +94,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel5.setText("Inserir Venda");
         jInternalFrameAtalhos.getContentPane().add(jLabel5);
-        jLabel5.setBounds(320, 50, 80, 14);
+        jLabel5.setBounds(310, 50, 120, 15);
 
-        jButton4.setText("jButton4");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shopping-cart-add-button_icon-icons.png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
         jInternalFrameAtalhos.getContentPane().add(jButton4);
-        jButton4.setBounds(310, 70, 120, 110);
+        jButton4.setBounds(300, 70, 110, 110);
 
         getContentPane().add(jInternalFrameAtalhos);
         jInternalFrameAtalhos.setBounds(0, 110, 1010, 460);

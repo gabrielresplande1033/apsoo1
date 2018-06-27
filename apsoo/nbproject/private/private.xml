@@ -3,22 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/Controller/ConexaoBD.java</file>
-            <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/Controller/ControleUsuario.java</file>
-            <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/View/TelaPrincipal.java</file>
-            <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/Model/modelUsuario.java</file>
-            <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/View/FormUsuario.java</file>
-            <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/View/TelaLogin.java</file>
-            <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/AlteracoesSQL.sql</file>
-=======
-            <file>file:/home/gabriel/Documentos/apsoo1/apsoo/src/Controller/ControleUsuario.java</file>
-            <file>file:/home/gabriel/Documentos/apsoo1/apsoo/src/AlteracoesSQL.sql</file>
-            <file>file:/home/gabriel/Documentos/apsoo1/apsoo/src/View/TelaPrincipal.java</file>
-            <file>file:/home/gabriel/Documentos/apsoo1/apsoo/src/View/FormUsuario.java</file>
-            <file>file:/home/gabriel/Documentos/apsoo1/apsoo/src/Controller/ConexaoBD.java</file>
-            <file>file:/home/gabriel/Documentos/apsoo1/apsoo/src/Model/modelUsuario.java</file>
->>>>>>> eed9fe980f52d1cca9679b2009c95e18a0552a04
+            <file>file:/home/gabriel/trab/apsoo1/apsoo/src/AlteracoesSQL.sql</file>
+            <file>file:/home/gabriel/trab/apsoo1/apsoo/src/Controller/ConexaoBD.java</file>
         </group>
     </open-files>
 </project-private>

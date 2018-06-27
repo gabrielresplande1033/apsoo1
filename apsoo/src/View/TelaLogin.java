@@ -38,6 +38,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabelImgLogin = new javax.swing.JLabel();
         jLabelFundo = new javax.swing.JLabel();
+        canvas1 = new java.awt.Canvas();
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/99166-200.png"))); // NOI18N
 
@@ -90,6 +91,8 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabelFundo.setText("Usuario");
         getContentPane().add(jLabelFundo);
         jLabelFundo.setBounds(0, 0, 609, 566);
+        getContentPane().add(canvas1);
+        canvas1.setBounds(230, 160, 0, 0);
 
         setSize(new java.awt.Dimension(608, 596));
         setLocationRelativeTo(null);
@@ -152,6 +155,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Canvas canvas1;
     private javax.swing.JButton jButtonAcessar;
     private javax.swing.JButton jButtonSair;
     private javax.swing.JLabel jLabel1;

@@ -36,6 +36,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -71,7 +73,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel3.setText("Inserir Produtos");
         jInternalFrameAtalhos.getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 50, 120, 15);
+        jLabel3.setBounds(20, 50, 120, 14);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icone6.png"))); // NOI18N
         jInternalFrameAtalhos.getContentPane().add(jButton3);
@@ -79,7 +81,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel4.setText("Inserir Usuários");
         jInternalFrameAtalhos.getContentPane().add(jLabel4);
-        jLabel4.setBounds(160, 50, 113, 15);
+        jLabel4.setBounds(160, 50, 75, 14);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adduser_añadir_3553.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -89,6 +91,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jInternalFrameAtalhos.getContentPane().add(jButton2);
         jButton2.setBounds(160, 70, 110, 110);
+
+        jLabel5.setText("Inserir Venda");
+        jInternalFrameAtalhos.getContentPane().add(jLabel5);
+        jLabel5.setBounds(320, 50, 80, 14);
+
+        jButton4.setText("jButton4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jInternalFrameAtalhos.getContentPane().add(jButton4);
+        jButton4.setBounds(310, 70, 120, 110);
 
         getContentPane().add(jInternalFrameAtalhos);
         jInternalFrameAtalhos.setBounds(0, 110, 1010, 460);
@@ -169,6 +184,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
           jInternalFrameAtalhos.setVisible(true);
     }//GEN-LAST:event_jMenuItemInicialActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       TelaVenda tela = new TelaVenda();
+       tela.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -208,11 +228,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JInternalFrame jInternalFrameAtalhos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

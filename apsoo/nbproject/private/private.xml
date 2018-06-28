@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/Controller/ConexaoBD.java</file>
             <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/Controller/ControleUsuario.java</file>
             <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/View/TelaPrincipal.java</file>
@@ -11,6 +12,10 @@
             <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/View/FormUsuario.java</file>
             <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/View/TelaLogin.java</file>
             <file>file:/C:/Users/gabriel/Documents/apsoo1/apsoo/src/AlteracoesSQL.sql</file>
+=======
+            <file>file:/home/gabriel/trab/apsoo1/apsoo/src/AlteracoesSQL.sql</file>
+            <file>file:/home/gabriel/trab/apsoo1/apsoo/src/Controller/ConexaoBD.java</file>
+>>>>>>> a693336b6c7cb7dddb4457cfd1ec0e92ae2f299b
         </group>
     </open-files>
 </project-private>

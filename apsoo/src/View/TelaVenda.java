@@ -349,7 +349,8 @@ public class TelaVenda extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setBounds(0, 0, 574, 566);
+        pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboClienteActionPerformed
@@ -375,6 +376,7 @@ public class TelaVenda extends javax.swing.JFrame {
             
             insereItensVenda(id);
             JOptionPane.showMessageDialog(null, "Venda inserida com sucesso!");
+            dispose();
         } catch (SQLException ex) {
             Logger.getLogger(TelaVenda.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -1,0 +1,20 @@
+Resumo das implementações e direcionamentos para teste:
+
+Para acessar o sistema, o usuário é "admin" e a senha é "1234" (validação de usuário ainda não implementada).
+
+Implementado CRUD completo de usuários do sistema, através do atalho no painel inicial ou no menu da tela principal.
+
+Implementado lançamento de vendas, através do atalho no painel inicial ou menu da tela principal. Nesse lançar vendas, foram feitos campos selects para Clientes,
+Produtos e Formas de Pagamento, os selects são alimentados pelo banco de dados. Também há disponível um campo Input para a inserção da data da venda. Com o botão
+"Adicionar Produto", os itens adicionados e as informações referente à eles são listadas em uma tabela, é possível inserir quantos produtos quiser. Ao finalizar
+a inserção dos produtos, basta selecionar a Forma de Pagamento, uma label ao término da janela informa o valor total referente aos produtos adicionados.
+
+O lançamento de uma nova venda interfere em duas tabelas, as tabelas venda_produto e itens_venda. Na tabela venda_produto, é salvo o ID da venda único, uma chave
+estrangeira que refere ao cliente selecionado, uma chave estrangeira que refere a forma de pagamento, a data da venda e o valor total. Para armazenar os produtos
+dessa venda, após a inserção na tabela venda_produto é realizado uma nova inserção na tabela itens_venda. Itens_venda armazenará, além de seu identificador único, duas
+chaves estrangeiras, para que seja possível localizar todos os itens referente à uma venda. Nessa tabela, é salvo a chave estrangeira referente ao id da venda, e uma
+chave estrangeira referente ao produto, que trata-se do código de barras.
+
+Para facilitar nos testes, há um arquivo no projeto chamado "Alteracoes.SQL", neste arquivo, estão todos os SCRIPTS para gerar as tabelas em banco e, também,
+alguns scripts para inserir dados nas tabelas que precisam ser populadas.
+

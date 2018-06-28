@@ -16,7 +16,7 @@ public class ConexaoBD {
     public Statement stm; // realizar consulta
     public ResultSet rs; // armazenar resultado consulta
     private String driver = "org.postgresql.Driver"; // identificar servico
-    private String caminho = "jdbc:postgresql://localhost:5432/bancoprojeto"; // setar local BD
+    private String caminho = "jdbc:postgresql://localhost:5432/bancobrinquedo"; // setar local BD
     private String usuario = "postgres"; // usuario BD
     private String senha = "teste1212"; // senha BD
     public Connection con; // realizar conexao
